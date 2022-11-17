@@ -1,0 +1,259 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "history main scientific" "history main scientific" "history main scientific";
+  height: 29rem;
+}
+
+.container-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "info title title title settings" "light screen screen screen go-back2" "go-back clear clear clear division" "x-sqr-n seven eight nine mult" "cloud four five six minus" "free-one one two tree plus" "free-two plus-minus zero point equal";
+  background-color: #7CBBFA;
+}
+
+.container-scientific {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "scientific-title scientific-title" "scientific-title scientific-title" "scientific-title scientific-title" "x-pr-2 x-sqr-2" "x-pr-y x-sqr-y" "mod pai" "base base";
+}
+
+.scientific-title {
+  padding-top: 0.5rem;
+  grid-area: scientific-title;
+}
+
+.x-pr-2 {
+  grid-area: x-pr-2;
+}
+
+.x-pr-y {
+  grid-area: x-pr-y;
+}
+
+.mod {
+  grid-area: mod;
+}
+
+.pai {
+  grid-area: pai;
+}
+
+.x-sqr-y {
+  grid-area: x-sqr-y;
+}
+
+.x-sqr-2 {
+  grid-area: x-sqr-2;
+}
+
+.base {
+  grid-area: base;
+}
+
+.info {
+  grid-area: info;
+}
+
+.light {
+  grid-area: light;
+}
+
+.go-back {
+  grid-area: go-back;
+}
+
+.screen {
+  grid-area: screen;
+  background-color: #F7F58A;
+  border: solid black 2px;
+}
+
+.title {
+  grid-area: title;
+}
+
+.settings {
+  grid-area: settings;
+}
+
+.go-back2 {
+  grid-area: go-back2;
+}
+
+.division {
+  grid-area: division;
+}
+
+.mult {
+  grid-area: mult;
+}
+
+.minus {
+  grid-area: minus;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.equal {
+  grid-area: equal;
+}
+
+.point {
+  grid-area: point;
+}
+
+.clear {
+  grid-area: clear;
+}
+
+.x-sqr-n {
+  grid-area: x-sqr-n;
+}
+
+.cloud {
+  grid-area: cloud;
+}
+
+.free-one {
+  grid-area: free-one;
+}
+
+.free-two {
+  grid-area: free-two;
+}
+
+.zero {
+  grid-area: zero;
+}
+
+.plus-minus {
+  grid-area: plus-minus;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.tree {
+  grid-area: tree;
+}
+
+.six {
+  grid-area: six;
+}
+
+.five {
+  grid-area: five;
+}
+
+.four {
+  grid-area: four;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.main-cell {
+  height: 100%;
+}
+
+.history {
+  grid-area: history;
+  background-color: rgb(189, 183, 183);
+}
+
+.main {
+  grid-area: main;
+  background-color: rgb(103, 157, 232);
+}
+
+.scientific {
+  grid-area: scientific;
+  background-color: #A6D196;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "main main main" "scientific scientific scientific" "history history history";
+  }
+}
+.text-center {
+  text-align: center;
+}
+
+.operations-log {
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 2rem;
+}
+
+.cell {
+  border: solid black 1px;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell-red {
+  background-color: #F79D8A;
+}
+
+.cell-red:hover {
+  background-color: #f85b3b;
+}
+
+.cell-number {
+  font-weight: 900;
+  background-color: #D0D4D9;
+}
+
+.cell-number:hover {
+  background-color: #717477;
+}
+
+.cell-blue:hover {
+  background-color: rgb(22, 108, 229);
+}
+
+.cell-green:hover {
+  background-color: #65c442;
+}
+
+.btn:hover {
+  opacity: 0.5;
+}/*# sourceMappingURL=main.css.map */
