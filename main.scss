@@ -1,4 +1,42 @@
-.container {  
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+:root {
+    --background-gray: #D0D4D9;
+    --screen: #F7F58A;
+    --btn-blue: #7CBBFA;
+    --btn-green: #A6D196;
+    --btn-orenge: #f1aea0;
+    --btn-gray: #D0D4D9;
+    --btn-blue-hover: #4ca0f5;
+    --btn-green-hover: #89d36e;
+    --btn-orenge-hover: #ee7e68;
+    --btn-gray-hover: #a3a8ad;
+    --text-color: rgb(36, 34, 34);
+}
+
+.dark {
+    --background-gray: #434c57;
+    --screen: #6b6a45;
+    --btn-gray: #434c57;
+    --btn-blue: #124f8b;
+    --btn-green: #21580d;
+    --btn-orenge: #6b1a0a;
+    --btn-blue-hover: #4ca0f5;
+    --btn-green-hover: #89d36e;
+    --btn-orenge-hover: #ee7e68;
+    --btn-gray-hover: #a3a8ad;
+    --text-color: rgb(255, 255, 255);
+}
+
+// Main grid
+.calculetor {
+    //border: black solid 1px;  
+    color: var(--text-color);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -8,11 +46,24 @@
         "history main scientific"
         "history main scientific"
         "history main scientific";
-
-    height: 29rem;
 }
 
-.container-main {  
+// 1. history
+.history {
+
+    grid-area: history;
+    background-color: var(--background-gray);
+}
+
+// 2. main
+.main {
+    grid-area: main;
+    height: fit-content;
+}
+
+// inner grid
+.main-part {
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -26,131 +77,268 @@
         "cloud four five six minus"
         "free-one one two tree plus"
         "free-two plus-minus zero point equal";
-
-    background-color: #7CBBFA;
 }
 
-.container-scientific {  display: grid;
-grid-template-columns: 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-grid-auto-rows: 1fr;
-gap: 0px 0px;
-grid-auto-flow: row;
-grid-template-areas:
-    "scientific-title scientific-title"
-    "scientific-title scientific-title"
-    "scientific-title scientific-title"
-    "x-pr-2 x-sqr-2"
-    "x-pr-y x-sqr-y"
-    "mod pai"
-    "base base";
+.btn-orange {
+    background-color: var(--btn-orenge);
+}
+
+.btn-blue {
+    background-color: var(--btn-blue);
+}
+
+.btn-gray {
+    background-color: var(--btn-gray);
+}
+
+.btn-green {
+    background-color: var(--btn-green);
+}
+
+.btn-orange:hover {
+    background-color: var(--btn-orenge-hover);
+}
+
+.btn-blue:hover {
+    background-color: var(--btn-blue-hover);
+}
+
+.btn-gray:hover {
+    background-color: var(--btn-gray-hover);
+}
+
+.btn-green:hover {
+    background-color: var(--btn-green-hover);
+}
+
+.btn-orange:active {
+    opacity: 50%;
+    border: none;
+}
+
+.btn-blue:active {
+    opacity: 50%;
+    border: none;
+}
+
+.btn-gray:active {
+    opacity: 50%;
+    border: none;
+}
+
+.btn-green:active {
+    opacity: 50%;
+    border: none;
+}
+
+.info {
+    grid-area: info;
+}
+
+.light {
+    grid-area: light;
+}
+
+.go-back {
+    grid-area: go-back;
+}
+
+.screen {
+
+    grid-area: screen;
+    background-color: var(--screen);
+    border: solid black 1px;
+}
+
+.title {
+    grid-area: title;
+}
+
+.settings {
+    grid-area: settings;
+}
+
+.go-back2 {
+    grid-area: go-back2;
+}
+
+.division {
+    grid-area: division;
+}
+
+.mult {
+    grid-area: mult;
+}
+
+.minus {
+    grid-area: minus;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+.equal {
+    grid-area: equal;
+}
+
+.point {
+    grid-area: point;
+}
+
+.clear {
+    grid-area: clear;
+}
+
+.x-sqr-n {
+    grid-area: x-sqr-n;
+}
+
+.cloud {
+    grid-area: cloud;
+}
+
+.free-one {
+    grid-area: free-one;
+}
+
+.free-two {
+    grid-area: free-two;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.plus-minus {
+    grid-area: plus-minus;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.tree {
+    grid-area: tree;
+}
+
+.six {
+    grid-area: six;
+}
+
+.five {
+    grid-area: five;
+}
+
+.four {
+    grid-area: four;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+// 3. scientific part
+.scientific {
+    grid-area: scientific;
+    background-color: var(--btn-green);
+
+}
+
+.scientific-part {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "scientific-title scientific-title"
+        "scientific-title scientific-title"
+        "scientific-title scientific-title"
+        "x-pr-2 x-sqr-2"
+        "x-pr-y x-sqr-y"
+        "mod pai"
+        "base base";
 }
 
 .scientific-title {
-    padding-top: 0.5rem; 
-    grid-area: scientific-title; 
+    padding-top: 0.5rem;
+    grid-area: scientific-title;
 }
 
-.x-pr-2 { grid-area: x-pr-2; }
-
-.x-pr-y { grid-area: x-pr-y; }
-
-.mod { grid-area: mod; }
-
-.pai { grid-area: pai; }
-
-.x-sqr-y { grid-area: x-sqr-y; }
-
-.x-sqr-2 { grid-area: x-sqr-2; }
-
-.base { grid-area: base; }
-
-
-.info { grid-area: info; }
-
-.light { grid-area: light; }
-
-.go-back { grid-area: go-back; }
-
-.screen { 
-    grid-area: screen;
-    background-color: #F7F58A; 
-    border: solid black 2px;
+.x-pr-2 {
+    grid-area: x-pr-2;
 }
 
-.title { grid-area: title; }
-
-.settings { grid-area: settings; }
-
-.go-back2 { grid-area: go-back2; }
-
-.division { grid-area: division; }
-
-.mult { grid-area: mult; }
-
-.minus { grid-area: minus; }
-
-.plus { grid-area: plus; }
-
-.equal { grid-area: equal; }
-
-.point { grid-area: point; }
-
-.clear { grid-area: clear; }
-
-.x-sqr-n { grid-area: x-sqr-n; }
-
-.cloud { grid-area: cloud; }
-
-.free-one { grid-area: free-one; }
-
-.free-two { grid-area: free-two; }
-
-.zero { grid-area: zero; }
-
-.plus-minus { grid-area: plus-minus; }
-
-.one { grid-area: one; }
-
-.two { grid-area: two; }
-
-.tree { grid-area: tree; }
-
-.six { grid-area: six; }
-
-.five { grid-area: five; }
-
-.four { grid-area: four; }
-
-.seven { grid-area: seven; }
-
-.eight { grid-area: eight; }
-
-.nine { grid-area: nine; }
-
-.main-cell{
-    height: 100%; 
+.x-pr-y {
+    grid-area: x-pr-y;
 }
 
-.history {
-    
-    grid-area: history;
-    background-color: rgb(189, 183, 183);
+.mod {
+    grid-area: mod;
 }
 
-.main { 
-    grid-area: main; 
-    background-color: rgb(103, 157, 232);
+.pai {
+    grid-area: pai;
 }
 
-.scientific { 
-    grid-area: scientific; 
-    background-color: #A6D196;
+.x-sqr-y {
+    grid-area: x-sqr-y;
+}
+
+.x-sqr-2 {
+    grid-area: x-sqr-2;
+}
+
+.base {
+    grid-area: base;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.operations-log {
+
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    width: 2rem;
+}
+
+.cell {
+    border: solid black 1px;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn:hover {
+    opacity: 0.5;
 }
 
 @media only screen and (max-width: 600px) {
-    
-    .container {  
+
+    .calculetor {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 3fr 1fr 1fr;
@@ -160,71 +348,13 @@ grid-template-areas:
             "main main main"
             "scientific scientific scientific"
             "history history history";
+
+        height: 100vh;
     }
+
+    .history {
+
+        min-height: 20rem;
+    }
+
 }
-
-.text-center{
-    text-align: center;
-}
-
-.operations-log{
-    
-    padding-top: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.icon{
-    width: 2rem;
-}
-
-.cell{
-    border: solid black 1px;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cell-red{
-    background-color: #F79D8A;
-}
-
-.cell-red:hover{
-    background-color: #f85b3b;
-}
-
-.cell-number{
-
-    font-weight: 900;
-    background-color: #D0D4D9;
-}
-
-.cell-number:hover{
-    background-color: #717477;
-}
-
-.cell-blue:hover{
-    background-color: rgb(22, 108, 229);
-}
-
-.cell-green:hover{
-    background-color: #65c442;
-}
-
-.btn:hover{
-    opacity: 0.5;
-}
- 
-
-// .dark-mode {
-//     background-color: rgb(194, 14, 134);
-//     color: rgb(34, 5, 24);
-//     }
-
-//     .history {
-//         background-color: #e6e20e;
-//     }
-
-//     .main-cell{
-//         background-color: #D0D4D9;
-//     }

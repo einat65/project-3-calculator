@@ -1,120 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Page</title>
-        <link rel="stylesheet" href="main.css">
 
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
 
-        <div class="container">
+</head>
 
-            <!-- Part 1: History -->
-            <div class="main-cell history">
-                <div class="text-center operations-log">Operations log</div>
-                <div class="text-center">2 + 5 = 7</div>
-            </div>
+<body id="bodyId">
 
-            <!-- Part 2: Calculator -->
-            <div class="main-cell main">
-                <div class="container-main">
-                    <div class="cell-blue cell info"><img class="icon" src="./icons/info.png" /></div>
-                    <div class="cell light cell-red"><img class="icon" src="./icons/light.png" /></div>
-                    <div class="cell go-back cell-red"><img class="icon" src="./icons/return.png" /></div>
-                    <div id="screenId" class="cell screen"></div>
-                    <div class="cell title">My Calculator</div>
-                    <div class="cell-blue cell settings"><img class="icon" src="./icons/setting.png" /></div>
-                    <div class="cell-blue cell go-back2"><img class="icon" src="./icons/return.png" /></div>
-                    <div onclick="numberOnClick('/')" class="cell-blue cell division"><img class="icon" src="./icons/divided.png" /></div>
-                    <div onclick="numberOnClick('*')" class="cell-blue cell mult"><img class="icon" src="./icons/multiplication.png" /></div>
-                    <div onclick="numberOnClick('-')" class="cell-blue cell minus"><img class="icon" src="./icons/minus-sign.png" /></div>
-                    <div onclick="numberOnClick('+')" class="cell-blue cell plus"><img class="icon" src="./icons/plus.png" /></div>
-                    <div class="cell-blue cell equal">=</div>
-                    <div class="cell point cell-number">.</div>
-                    <div onclick="onClear()" class="cell-blue cell clear">C</div>
-                    <div class="cell x-sqr-n cell-red"><img class="icon" src="./icons/superscript.png" /></div>
-                    <div class="cell cloud cell-red"><img class="icon" src="./icons/cloud.png" /></div>
-                    <div class="cell free-one"></div>
-                    <div class="cell free-two"></div>
-                    <div onclick="numberOnClick(0)" class="cell zero cell-number">0</div>
-                    <div class="cell-blue cell plus-minus"><img class="icon" src="./icons/p-m.png" /></div>
-                    <div onclick="numberOnClick(1)" class="cell one cell-number">1</div>
-                    <div onclick="numberOnClick(2)" class="cell two cell-number">2</div>
-                    <div onclick="numberOnClick(3)" class="cell tree cell-number">3</div>
-                    <div onclick="numberOnClick(6)" class="cell six cell-number">6</div>
-                    <div onclick="numberOnClick(5)" class="cell five cell-number">5</div>
-                    <div onclick="numberOnClick(4)" class="cell four cell-number">4</div>
-                    <div onclick="numberOnClick(7)" class="cell seven cell-number">7</div>
-                    <div onclick="numberOnClick(8)" class="cell eight cell-number">8</div>
-                    <div onclick="numberOnClick(9)" class="cell nine cell-number">9</div>
-                  </div>
-            </div>
+    <div class="calculetor">
 
-            <!-- Part 3: Scientific -->
-            <div class="main-cell scientific">
-                <div class="container-scientific">
-                    <div class="text-center scientific-title">Scientific</div>
-                    <div class="cell-green cell x-pr-2"><img class="icon" src="./icons/superscript.png" /></div>
-                    <div class="cell-green cell x-pr-y"><img class="icon" src="./icons/power.png" /></div>
-                    <div class="cell-green cell mod">mod</div>
-                    <div class="cell-green cell pai">π</div>
-                    <div class="cell-green cell x-sqr-y"><img class="icon" src="./icons/math.png" /></div>
-                    <div class="cell-green cell x-sqr-2"><img class="icon" src="./icons/formula.png" /></div>
-                    <div class="cell-green cell base">Base</div>
-                  </div>
-            </div>
+        <!-- Part 1: History -->
+        <div id="historyId" class="history">
+            <div class="text-center operations-log">Operations log</div>
+            <div id="history-screen-id" class="text-center"></div>
         </div>
-    
-    </body>
+
+        <!-- Part 2: Main -->
+        <div class="main">
+            <div class="main-part">
+
+                <div onclick="printInfoToAlert()" class="cell btn-blue info"><img class="icon" src="./icons/info.png" />
+                </div>
+                <div class="cell btn-orange light" onclick="chengeColorMode()">
+                    <img class="icon" src="./icons/light.png" />
+                </div>
+                <div onclick="showOrHiddeHis()" class="cell btn-orange go-back"><img class="icon"
+                        src="./icons/history.png" /></div>
+                <div id="screenId" class="cell screen"></div>
+                <div class="cell btn-blue title">My Calculator</div>
+                <div class="cell btn-blue settings"><img class="icon" src="./icons/setting.png" /></div>
+                <div class="cell btn-blue go-back2" onclick="minusToExpresion()"><img class="icon"
+                        src="./icons/return.png" /></div>
+                <div onclick="appendToExpresion('/')" class="cell btn-blue division"><img class="icon"
+                        src="./icons/divided.png" /></div>
+                <div onclick="appendToExpresion('*')" class="cell btn-blue mult"><img class="icon"
+                        src="./icons/multiplication.png" /></div>
+                <div onclick="appendToExpresion('-')" class="cell btn-blue minus"><img class="icon"
+                        src="./icons/minus-sign.png" /></div>
+                <div onclick="appendToExpresion('+')" class="cell btn-blue plus"><img class="icon"
+                        src="./icons/plus.png" /></div>
+                <div class="cell btn-blue equal" onclick="calculate()">=</div>
+                <div class="cell btn-gray point">.</div>
+                <div onclick="onClear()" class="cell btn-blue clear">C</div>
+                <div onclick="showOrHiddeScientific()" class="cell btn-orange x-sqr-n"><img class="icon"
+                        src="./icons/superscript.png" /></div>
+                <div class="cell btn-orange cloud"><img class="icon" src="./icons/cloud.png" /></div>
+                <div class="cell btn-blue free-one"></div>
+                <div class="cell btn-blue free-two"></div>
+                <div onclick="appendToExpresion(0)" class="cell btn-gray zero">0</div>
+                <div class="cell btn-blue plus-minus"><img class="icon" src="./icons/p-m.png" /></div>
+                <div onclick="appendToExpresion(1)" class="cell btn-gray one ">1</div>
+                <div onclick="appendToExpresion(2)" class="cell btn-gray two">2</div>
+                <div onclick="appendToExpresion(3)" class="cell btn-gray tree">3</div>
+                <div onclick="appendToExpresion(6)" class="cell btn-gray six">6</div>
+                <div onclick="appendToExpresion(5)" class="cell btn-gray five">5</div>
+                <div onclick="appendToExpresion(4)" class="cell btn-gray four">4</div>
+                <div onclick="appendToExpresion(7)" class="cell btn-gray seven">7</div>
+                <div onclick="appendToExpresion(8)" class="cell btn-gray eight">8</div>
+                <div onclick="appendToExpresion(9)" class="cell btn-gray nine">9</div>
+            </div>
+
+        </div>
+
+        <!-- Part 3: Scientific -->
+        <div id="scientificId" class="scientific">
+            <div class="scientific-part">
+                <div class="text-center scientific-title">Scientific</div>
+                <div class="btn-green cell x-pr-2"><img class="icon" src="./icons/superscript.png" /></div>
+                <div class="btn-green cell x-pr-y"><img class="icon" src="./icons/power.png" /></div>
+                <div class="btn-green cell mod">mod</div>
+                <div class="btn-green cell pai">π</div>
+                <div class="btn-green cell x-sqr-y"><img class="icon" src="./icons/math.png" /></div>
+                <div class="btn-green cell x-sqr-2"><img class="icon" src="./icons/formula.png" /></div>
+                <div class="btn-green cell base">Base</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
 
 
-    <script>
-        let stack = [];
-        
-        function numberOnClick(num){
-            const screen = document.getElementById('screenId');
-
-            if(screen === undefined)
-                return;
-
-            if(stack.length === 0){
-
-                stack.push(num)
-                screen.innerHTML = num;
-                console.log(stack);
-                return ;
-            }
-            
-            let item = stack[stack.length -1];
-
-            // number
-            if (typeof item === 'number' && !Number.isNaN(item)) {
-
-                stack.pop();
-                item = item * 10 + num;
-                stack.push(item);
-            } else {
-
-                stack.push(item);
-            }
-
-            console.log(stack);
-            screen.innerHTML = screen.innerHTML + num;
-        }
-
-        function onClear(){
-            const screen = document.getElementById('screenId');
-
-            if(screen === undefined)
-                return;
-
-            stack = [];
-            console.log(stack);
-            screen.innerHTML = '';
-        }
-
-    </script>
 </html>
