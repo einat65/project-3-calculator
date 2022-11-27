@@ -121,6 +121,8 @@ function chengeColorMode(): void {
     }
 
 
+
     //alert('color mode: ' + mode)
 }
+
 
